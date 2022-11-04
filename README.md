@@ -1,6 +1,6 @@
 
 
-# Spread Fullstack Developer - Flex Turismo &nbsp; &nbsp; &nbsp; <img src="https://img.shields.io/github/last-commit/bemibrando/pokedex?style=for-the-badge" height="24px"/> &nbsp; <img src="https://img.shields.io/badge/status-In%20Progress-yellow?style=for-the-badge" height="24px">
+# Pokedex &nbsp; &nbsp; &nbsp; <img src="https://img.shields.io/github/last-commit/bemibrando/pokedex?style=for-the-badge" height="24px"/> &nbsp; <img src="https://img.shields.io/badge/status-In%20Progress-yellow?style=for-the-badge" height="24px">
 
 This is a solution to Building a Pokédex with JavaScript from [Digital Innovation One](https://www.dio.me/en). Dio.me is the platform for you to learn from experts, master the main technologies and enter the most desired companies faster.
 <br/><br/>
