@@ -6,6 +6,18 @@
     grid-template-columns: 1fr;
 }
 
+.pokemon-mask{
+    position: relative;
+    background-color: black;
+    opacity: 0;
+    top: -5.5rem;
+    left: -.5rem;
+    box-sizing: border-box;
+    width: 105%;
+    height: 105%;
+    z-index: 100;
+}
+
 .normal {
     background-color: #a6a877;
 }
@@ -111,13 +123,13 @@
     justify-content: space-between;
 }
 
-.pokemon .types {
+.types {
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-.types .type{
+.type{
     color: #fff;
     padding: .25rem .5rem;
     margin: .25rem 0;

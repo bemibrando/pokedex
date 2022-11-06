@@ -1,0 +1,164 @@
+.pokemon-description-bg{
+    padding: 1.5rem;
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.6;
+}
+
+.pokemon-description{
+    z-index: 1000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    min-height: 80vh;
+    opacity: 1;
+
+    border-radius: 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.description-header{
+    width: 75vw;
+    display: grid;
+    grid-template-areas: 
+        'name number'
+        'types number';
+    gap: .5rem;
+    padding: .5rem;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.description-name{
+    grid-area: name;
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    width: 40vw;
+}
+.description-types{
+    grid-area: types;
+    display:inline;
+}
+
+.description-type{
+    display:inline;
+
+    padding: .3rem .75rem;
+    margin: .25rem 0;
+    border-radius: 1rem;
+    text-align: center;
+    filter: brightness(1.1);
+}
+
+.description-number{
+    grid-area: number;
+    vertical-align: middle;
+}
+
+.description-sprite{
+    height: 20vh;
+    margin-bottom: -1rem;
+    z-index: 1010;
+}
+.description-details-bg{
+    background-color: aliceblue;
+    height: 55vh;
+    width: 100%;
+    color: black;
+    border-radius: 1rem;
+}
+
+.description-details{
+    width: 60vw;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detail-row{
+    width: 60vw;
+    margin: .75rem;
+    text-align: center;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.detail-topic{
+    color: gray;
+    text-align: center;
+    width: 25%;
+}
+
+.detail-result{
+    width: 25%;
+}
+
+.habitat{
+    text-transform: capitalize;
+}
+
+.detail-egg-group{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    width: 25%;
+}
+
+.egg-type{
+    padding-left: .5rem;
+    vertical-align: center;
+    text-transform: capitalize;
+    word-break: keep-all;
+}
+
+.abilities-list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 25%;
+}
+
+.ability{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    border: 1px solid gray;
+    border-radius: 1rem;
+    margin: .25rem;
+    text-transform: capitalize;
+    width: 12rem;
+}
+
+@media screen and (max-width: 566px) {
+    .abilities-list{
+        grid-template-columns: 1fr;
+    }
+    .detail-row{
+        font-size: 1rem;
+    }
+    .ability{
+        padding: .5rem 1rem;
+    }
+}

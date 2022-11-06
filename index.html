@@ -13,16 +13,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/pokedex.css">
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/pokedex.css">
+    <link rel="stylesheet" href="./assets/css/pokemon-description.css">
     <title>Pokedex</title>
 </head>
 <body>
     <section class="content">
         <h1>Pokedex</h1>
 
-        <ol class="pokemons" id="pokemonList">
-        </ol>
+        <div id="pokedexContainer">
+            <ol class="pokemons" id="pokemonList"> 
+            </ol>
+        </div>
 
         <div class="pagination">
             <button id="loadMoreButton" type="button">
@@ -31,9 +34,14 @@
         </div>
     </section>
 
+    <section id="pokemonPopUp" class="pokemonDetails">
+
+    </section>
+
     <!-- JS -->
-    <script src="/assets/js/pokemon-model.js"></script>
-    <script src="/assets/js/poke-api.js"></script>
-    <script src="/assets/js/main.js"></script>
+    <script src="./assets/js/pokemon-model.js"></script>
+    <script src="./assets/js/poke-api.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/pokemon-description.js"></script>
 </body>
 </html>

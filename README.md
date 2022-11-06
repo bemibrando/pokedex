@@ -1,8 +1,9 @@
-
-
-# Pokedex &nbsp; &nbsp; &nbsp; <img src="https://img.shields.io/github/last-commit/bemibrando/pokedex?style=for-the-badge" height="24px"/> &nbsp; <img src="https://img.shields.io/badge/status-In%20Progress-yellow?style=for-the-badge" height="24px">
+# Pokedex &nbsp; &nbsp; &nbsp; <img src="https://img.shields.io/github/last-commit/bemibrando/pokedex?style=for-the-badge" height="24px"/> &nbsp; <img src="https://img.shields.io/badge/status-done-green?style=for-the-badge" height="24px"/>
 
 This is a solution to Building a Pokédex with JavaScript from [Digital Innovation One](https://www.dio.me/en). Dio.me is the platform for you to learn from experts, master the main technologies and enter the most desired companies faster.
+
+This Pokedex load all pokemons of first generation and when you click on a pokemon, some details about the chosen pokemon will appear.
+
 <br/><br/>
 
 <b>Build with:</b> <br/>
@@ -26,7 +27,6 @@ This is a solution to Building a Pokédex with JavaScript from [Digital Innovati
 <br />
 
 ## Overview
----
 
 ### <b id="the-challenge">The challenge</b>
 - The project goals was develop a pokedex that displays multiple pokemons and create a page that displays the details of the chosen pokemon.
@@ -37,20 +37,20 @@ Done:
 - Build webpage dinamically
 - Create pagination
 - Limit to show only first generation Pokemons
-
-To do:
 - Create Pokemon Description page
 
 ### <b id="screenshot">Screenshot</b>
 
 <p align="center">
     <img src="./assets/img/desktop.png" alt="Pokedex solution desktop view" width="600px">
+    <img src="./assets/img/desktop-description.png" alt="Pokemon description solution desktop view" width="600px">
     <img src="./assets/img/phone.png" alt="Pokedex solution cellphone view" width="257px">
+    <img src="./assets/img/phone-description.png" alt="Pokemon description solution cellphone view" width="257px">
 </p>
 
 ### <b id="links">Links</b>
 - Solution URL: [GitHub Repository](https://github.com/bemibrando/pokedex/)
-- Live Site URL: [GitHub Pages](https://bemibrando.github.io/pokedex)
+- Live Site URL: [GitHub Pages](https://bemibrando.github.io/pokedex/)
 
 <br />
 
