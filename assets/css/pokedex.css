@@ -100,23 +100,26 @@
     flex-direction: column;
 }
 
-.pokemon .number{
-    color: black;
-    opacity: 0.3;
+.pokemon-header{
+    display: flex;
+    justify-content: space-between;
+}
 
+.number{
     text-align: right;
+    color: black;
+    opacity: 0.5;
     font-size: .625rem;
-
     margin-bottom: 0;
 }
 
-.pokemon .name{
+.name{
     color: #fff;
     margin: .25rem 0;
     text-transform: capitalize;
 }
 
-.pokemon .detail{
+.detail{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -139,7 +142,7 @@
     filter: brightness(1.1);
 }
 
-.pokemon .detail img {
+.detail img {
     border-style: none;
     max-width: 100%;
     height: 4rem;
