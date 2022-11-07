@@ -38,6 +38,7 @@ Done:
 - Create pagination
 - Limit to show only first generation Pokemons
 - Create Pokemon Description page
+- When you click on a pokemon, display the details of the chosen pokemon at middle of screen
 
 ### <b id="screenshot">Screenshot</b>
 

@@ -20,25 +20,25 @@ function convertPokemonDescriptionToHtml(pokemon){
         <div class="description-details-bg">
             <div class="description-details">
                 <div class="detail-row">
-                    <div class="detail-topic">Egg Group :</div>
+                    <div class="detail-topic">Egg Group : </div>
                     <ol class="detail-egg-group">
                         ${pokemon.egg_group.map((egg_type) => `<li class="egg-type">${egg_type}</li>`).join(',')}
                     </ol>
                 </div>
                 <div class="detail-row">
-                    <span class="detail-topic">Habitat :</span>
+                    <span class="detail-topic">Habitat : </span>
                     <span class="detail-result habitat">${pokemon.habitat}</span>
                 </div>
                 <div class="detail-row">
-                    <span class="detail-topic">Height :</span>
+                    <span class="detail-topic">Height : </span>
                     <span class="detail-result">${pokemon.height} dm</span>
                 </div>
                 <div class="detail-row">
-                    <span class="detail-topic">Weight :</span>
+                    <span class="detail-topic">Weight : </span>
                     <span class="detail-result">${pokemon.weight} hg</span>
                 </div>
                 <div class="detail-row">
-                    <span class="detail-topic">Abilities :</span>
+                    <span class="detail-topic">Abilities : </span>
                     <ol class="abilities-list">
                         ${pokemon.abilities.map((ability) => `<li class="ability ${ability}">${ability}</li>`).join('')}
                     </ol>

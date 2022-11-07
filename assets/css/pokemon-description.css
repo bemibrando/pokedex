@@ -1,17 +1,17 @@
 .pokemon-description-bg{
     padding: 1.5rem;
     z-index: 100;
-    position: absolute;
-    left: 0;
+    position: fixed;
     top: 0;
-    width: 100vw;
-    height: 100vh;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
     opacity: 0.6;
 }
 
 .pokemon-description{
     z-index: 1000;
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -103,7 +103,7 @@
 .detail-topic{
     color: gray;
     text-align: center;
-    width: 25%;
+    text-align: left;
 }
 
 .detail-result{
@@ -143,12 +143,20 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 1rem 1.5rem;
+    padding: .75rem 1rem;
     border: 1px solid gray;
     border-radius: 1rem;
     margin: .25rem;
     text-transform: capitalize;
     width: 12rem;
+}
+@media screen and (max-width: 410px) {
+    .detail-row{
+        font-size: .9rem;
+    }
+    .ability{
+        width: 6rem;
+    }
 }
 
 @media screen and (max-width: 566px) {
@@ -159,6 +167,11 @@
         font-size: 1rem;
     }
     .ability{
-        padding: .5rem 1rem;
+        width: 9rem;
+    }
+}
+@media screen and (max-width: 992px) {
+    .abilities-list{
+        grid-template-columns: 1fr;
     }
 }
