@@ -43,6 +43,7 @@ Done:
 ### <b id="screenshot">Screenshot</b>
 
 <p align="center">
+    <img src="./assets/img/desktop.gif" alt="Pokedex solution desktop gif view" width="600px">
     <img src="./assets/img/desktop.png" alt="Pokedex solution desktop view" width="600px">
     <img src="./assets/img/desktop-description.png" alt="Pokemon description solution desktop view" width="600px">
     <img src="./assets/img/phone.png" alt="Pokedex solution cellphone view" width="257px">
