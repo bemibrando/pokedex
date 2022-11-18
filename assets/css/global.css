@@ -9,10 +9,18 @@ body{
     background-color: #f6f8fc;
 }
 
+.page-title{
+    color: #170000;
+}
+
 .content {
     padding: 1rem;
-    background-color: #fff;
-    height: 97vh;
+    background-color: aliceblue;
+    min-height: 97vh;
+}
+
+.light-bg{
+    opacity: 0.6;
 }
 
 .pagination {
@@ -25,15 +33,22 @@ body{
 }
 
 .pagination button{
-    padding: .25rem .5rem;
+    padding: .25rem .75rem;
     margin: .25rem 0;
     color: #fff;
-    background-color: #6c79db;
+    background-color: #405cf5;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
     border: none;
-    border-radius: 1rem;
+    border-radius:.5rem;
+    cursor: pointer;
+    height: 2.5rem;  
+    min-width: 6rem;
+    text-align: center;
 }
 
-@media scree and (min-width: 992px){
+@media screen and (min-width: 992px){
     .content{
         max-width: 992px;
         height:auto;

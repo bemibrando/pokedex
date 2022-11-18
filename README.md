@@ -30,6 +30,8 @@ This Pokedex load all pokemons of first generation and when you click on a pokem
 
 ### <b id="the-challenge">The challenge</b>
 - The project goals was develop a pokedex that displays multiple pokemons and create a page that displays the details of the chosen pokemon.
+Extra:
+- Search for a specific pokemon
 
 ### <b id="project-composition">Project Composition</b>
 Done:
@@ -38,14 +40,17 @@ Done:
 - Create pagination
 - Limit to show only first generation Pokemons
 - Create Pokemon Description page
+Extra:
 - When you click on a pokemon, display the details of the chosen pokemon at middle of screen
+- Search for a specific pokemon
+- Navigate between search and pokédex
 
 ### <b id="screenshot">Screenshot</b>
 
 <p align="center">
     <img src="./assets/img/desktop.gif" alt="Pokedex solution desktop gif view" width="600px">
-    <img src="./assets/img/desktop.png" alt="Pokedex solution desktop view" width="600px">
-    <img src="./assets/img/desktop-description.png" alt="Pokemon description solution desktop view" width="600px">
+    <img src="./assets/img/desktop.png" alt="Pokedex solution desktop view" width="500px">
+    <img src="./assets/img/desktop-description.png" alt="Pokemon description solution desktop view" width="500px">
     <img src="./assets/img/phone.png" alt="Pokedex solution cellphone view" width="257px">
     <img src="./assets/img/phone-description.png" alt="Pokemon description solution cellphone view" width="257px">
 </p>
@@ -80,6 +85,8 @@ Done:
 - [Pokemon RESTful API](https://pokeapi.co/) - All the Pokémon data you'll ever need in one place,
 easily accessible through a modern RESTful API.
 - [DIO.me - Digital Innovation One](https://www.dio.me/en) - Dio.me is the platform for you to learn from experts, master the main technologies and enter the most desired companies faster.
+- [CSS Search Box](https://blog.stackfindover.com/css-search-boxes/) - Inspiration for Search Box Design
+- [CSS Box Shadow Examples](https://getcssscan.com/css-box-shadow-examples) - Used for add box shadow
 
 ## Author
 <div sytle="display: inline-block;">
@@ -101,4 +108,27 @@ easily accessible through a modern RESTful API.
             <img src="https://img.shields.io/badge/bemi.brando@outlook.com-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white">
         </a><br/>
     </div>
+</div>
+
+## Acknowledgments
+» Renan J. de Paula - Taught me how to develop a pokedex that displays multiple pokemons
+<div>
+    <a href="https://github.com/RenanJPaula" target="_blank">
+        <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white">
+    </a>
+    <a href="https://www.linkedin.com/in/renanjpaula/" target="_blank">
+        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
+    </a>
+</div>
+
+<br />
+
+» Mateus Rocha - Inspired me to make the pokemon search page
+<div>
+    <a href="https://github.com/mateusrr" target="_blank">
+        <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white">
+    </a>
+    <a href="https://www.linkedin.com/in/mateusrr/" target="_blank">
+        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
+    </a>
 </div>

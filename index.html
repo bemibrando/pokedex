@@ -14,25 +14,38 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/search.css">
+    <link rel="stylesheet" href="./assets/css/searched-pokemon.css">
     <link rel="stylesheet" href="./assets/css/pokedex.css">
     <link rel="stylesheet" href="./assets/css/pokemon-description.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>Pokedex</title>
 </head>
 <body>
-    <section class="content">
-        <h1>Pokedex</h1>
+    <main class="content" id="main-content">
+        <h1 class="page-title">Pokedex</h1>
+
+        <div class="search-container">
+            <form class="search-form" action="" onsubmit="searchPokemon(event)">
+                <input type="text" class="pokemon-search" name="pokemonsearch" id="pokemonSearch"/>
+                <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
 
         <div id="pokedexContainer">
-            <ol class="pokemons" id="pokemonList"> 
+            <ol class="pokemons" id="pokemonList">
             </ol>
         </div>
 
         <div class="pagination">
             <button id="loadMoreButton" type="button">
-                Load More
+                <label>Load More</label>
             </button>
         </div>
-    </section>
+    </main>
 
     <section id="pokemonPopUp" class="pokemonDetails">
 
@@ -43,5 +56,6 @@
     <script src="./assets/js/poke-api.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/pokemon-description.js"></script>
+    <script src="./assets/js/search-pokemon.js"></script>
 </body>
 </html>

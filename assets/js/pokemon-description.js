@@ -4,7 +4,7 @@ let selectedPokemonBg, selectedPokemon
 
 function convertPokemonDescriptionToHtml(pokemon){
     return `    
-    <div class="pokemon-description-bg ${pokemon.type}" id="descriptionBg">
+    <div class="pokemon-description-bg ${pokemon.type} light-bg" id="descriptionBg">
     </div>
     <div class="pokemon-description ${pokemon.type}" id="pokemonDescription">
         <div class="description-header">

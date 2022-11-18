@@ -1,3 +1,6 @@
+#pokedexContainer{
+    margin-bottom: 1rem;
+}
 .pokemons {
     list-style: none;
     padding: 0;
