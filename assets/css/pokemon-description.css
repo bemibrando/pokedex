@@ -29,7 +29,6 @@
 }
 
 .description-header{
-    width: 75vw;
     display: grid;
     grid-template-areas: 
         'name number'
@@ -45,7 +44,7 @@
     grid-area: name;
     text-transform: capitalize;
     font-size: 1.8rem;
-    width: 40vw;
+    width: 30vw;
 }
 .description-types{
     grid-area: types;
@@ -103,12 +102,12 @@
 
 .detail-topic{
     color: gray;
-    text-align: center;
     text-align: left;
+    width: 5.5rem;
 }
 
 .detail-result{
-    width: 25%;
+    min-width: 25%;
 }
 
 .habitat{
@@ -151,12 +150,30 @@
     text-transform: capitalize;
     width: 12rem;
 }
+
+@media screen and (max-width: 992px) {
+    .abilities-list{
+        grid-template-columns: 1fr;
+    }
+    .description-name{
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width: 566px) {
+    .detail-row{
+        font-size: 1rem;
+        justify-content: flex-start;
+        padding-left: 1rem;
+    }
+    .ability{
+        width: 9rem;
+    }
+}
+
 @media screen and (max-width: 410px) {
     .pokemon-description{
         width: 90vw;
-    }
-    .description-details{
-        width: 60vw;
     }
     .detail-row{
         font-size: .9rem;
@@ -164,21 +181,8 @@
     .ability{
         width: 6rem;
     }
-}
-
-@media screen and (max-width: 566px) {
-    .abilities-list{
-        grid-template-columns: 1fr;
-    }
-    .detail-row{
-        font-size: 1rem;
-    }
-    .ability{
-        width: 9rem;
-    }
-}
-@media screen and (max-width: 992px) {
-    .abilities-list{
-        grid-template-columns: 1fr;
+    .description-header{
+        width: 100%;
+        justify-content: space-between;
     }
 }

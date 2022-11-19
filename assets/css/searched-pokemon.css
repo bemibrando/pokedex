@@ -32,15 +32,16 @@
     border-radius: 1rem;
 }
 
-@media screen and (max-width: 410px) {
-    .src-pokemon-description{
-        margin: .5rem;
-    }
-}
 
 @media screen and (max-width: 1024px){
     .src-description-bg{
         z-index: 0;
         height: .7rem;
     }    
+}
+
+@media screen and (max-width: 410px) {
+    .src-pokemon-description{
+        margin: .5rem;
+    }
 }

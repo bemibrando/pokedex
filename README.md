@@ -30,6 +30,7 @@ This Pokedex load all pokemons of first generation and when you click on a pokem
 
 ### <b id="the-challenge">The challenge</b>
 - The project goals was develop a pokedex that displays multiple pokemons and create a page that displays the details of the chosen pokemon.
+
 Extra:
 - Search for a specific pokemon
 
@@ -40,6 +41,7 @@ Done:
 - Create pagination
 - Limit to show only first generation Pokemons
 - Create Pokemon Description page
+
 Extra:
 - When you click on a pokemon, display the details of the chosen pokemon at middle of screen
 - Search for a specific pokemon
@@ -49,10 +51,22 @@ Extra:
 
 <p align="center">
     <img src="./assets/img/desktop.gif" alt="Pokedex solution desktop gif view" width="600px">
-    <img src="./assets/img/desktop.png" alt="Pokedex solution desktop view" width="500px">
-    <img src="./assets/img/desktop-description.png" alt="Pokemon description solution desktop view" width="500px">
-    <img src="./assets/img/phone.png" alt="Pokedex solution cellphone view" width="257px">
-    <img src="./assets/img/phone-description.png" alt="Pokemon description solution cellphone view" width="257px">
+</p>
+
+<h3 align="center"> Desktop view</h3>
+
+<p align="center">
+    <img src="./assets/img/desktop.jpeg" alt="Pokedex solution desktop view" width="75%">
+    <img src="./assets/img/desktop-description.jpeg" alt="Pokemon description solution desktop view" width="75%">
+    <img src="./assets/img/desktop-search.jpeg" alt="Pokemon search solution desktop view" width="75%">
+</p>
+
+<h3 align="center"> Phone view</h3>
+
+<p align="center">
+    <img src="./assets/img/phone.jpeg" alt="Pokedex solution cellphone view" width="257px">
+    <img src="./assets/img/phone-description.jpeg" alt="Pokemon description solution cellphone view" width="257px">
+    <img src="./assets/img/phone-search.jpeg" alt="Pokemon search solution cellphone view" width="257px">
 </p>
 
 ### <b id="links">Links</b>
