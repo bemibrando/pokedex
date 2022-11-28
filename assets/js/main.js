@@ -1,8 +1,8 @@
 let pokemonList = document.getElementById("pokemonList")
 const loadMoreButton = document.getElementById('loadMoreButton')
-const _limit = 10
+const _limit = 10;
 let _offset = 0;
-const maxRecords = 151
+const maxRecords = 1000
 
 function convertPokemonToHtml(pokemon) {
     return `    

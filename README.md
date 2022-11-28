@@ -1,8 +1,8 @@
-# Pokedex &nbsp; &nbsp; &nbsp; <img src="https://img.shields.io/github/last-commit/bemibrando/pokedex?style=for-the-badge" height="24px"/> &nbsp; <img src="https://img.shields.io/badge/status-done-green?style=for-the-badge" height="24px"/>
+# Pokedex &nbsp; &nbsp; &nbsp; <img src="https://img.shields.io/github/last-commit/bemibrando/pokedex?style=for-the-badge" height="24px"/> &nbsp; <img src="https://img.shields.io/badge/status-In Progress-yellow?style=for-the-badge" height="24px"/>
 
 This is a solution to Building a Pokédex with JavaScript from [Digital Innovation One](https://www.dio.me/en). Dio.me is the platform for you to learn from experts, master the main technologies and enter the most desired companies faster.
 
-This Pokedex load all pokemons of first generation and when you click on a pokemon, some details about the chosen pokemon will appear.
+This Pokedex load all pokemons and when you click on a pokemon, some details about the chosen pokemon will appear. It's possible to search for a specific pokemon and also look up just for types
 
 <br/><br/>
 
@@ -23,6 +23,7 @@ This Pokedex load all pokemons of first generation and when you click on a pokem
   - [What I learned](#what-i-learned)
 - [Useful Resources](#useful-resources)
 - [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
 <br />
 
@@ -44,8 +45,15 @@ Done:
 
 Extra:
 - When you click on a pokemon, display the details of the chosen pokemon at middle of screen
+- When a pokémon is selected to show its description, disable page scroll
 - Search for a specific pokemon
-- Navigate between search and pokédex
+- Search by type
+- Reload search list when choosing a type 
+- Navigate between search and pokédex and between search type and pokédex
+- Page 404
+
+Bugs fixed:
+- some pokemons do not have habitat and this caused the pokemon not to be loaded
 
 ### <b id="screenshot">Screenshot</b>
 
@@ -53,21 +61,26 @@ Extra:
     <img src="./assets/img/desktop.gif" alt="Pokedex solution desktop gif view" width="600px">
 </p>
 
-<h3 align="center"> Desktop view</h3>
+<details>
+<summary>Desktop view</summary>
+
 
 <p align="center">
     <img src="./assets/img/desktop.jpeg" alt="Pokedex solution desktop view" width="75%">
     <img src="./assets/img/desktop-description.jpeg" alt="Pokemon description solution desktop view" width="75%">
     <img src="./assets/img/desktop-search.jpeg" alt="Pokemon search solution desktop view" width="75%">
 </p>
+</details>
 
-<h3 align="center"> Phone view</h3>
+<details>
+<summary>Phone view</summary>
 
 <p align="center">
     <img src="./assets/img/phone.jpeg" alt="Pokedex solution cellphone view" width="257px">
     <img src="./assets/img/phone-description.jpeg" alt="Pokemon description solution cellphone view" width="257px">
     <img src="./assets/img/phone-search.jpeg" alt="Pokemon search solution cellphone view" width="257px">
 </p>
+</details>
 
 ### <b id="links">Links</b>
 - Solution URL: [GitHub Repository](https://github.com/bemibrando/pokedex/)
@@ -79,11 +92,10 @@ Extra:
 
 ### <b id="built-with">Built with</b>
 - Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
+- CSS
 - JavaScript
 - PokeApi
+- #region to organize some parts of the code
 
 ### <b id="what-i-learned">What I learned</b>
 - How to consume RESTful API
@@ -101,6 +113,8 @@ easily accessible through a modern RESTful API.
 - [DIO.me - Digital Innovation One](https://www.dio.me/en) - Dio.me is the platform for you to learn from experts, master the main technologies and enter the most desired companies faster.
 - [CSS Search Box](https://blog.stackfindover.com/css-search-boxes/) - Inspiration for Search Box Design
 - [CSS Box Shadow Examples](https://getcssscan.com/css-box-shadow-examples) - Used for add box shadow
+- [CSS Buttons Examples](https://getcssscan.com/css-buttons-examples) - Used for add styled buttons
+- [IconScout](https://iconscout.com/) - For free icons
 
 ## Author
 <div sytle="display: inline-block;">

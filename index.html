@@ -20,20 +20,47 @@
     <link rel="stylesheet" href="./assets/css/pokemon-description.css">
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
     <title>Pokedex</title>
 </head>
 <body>
-    <main class="content" id="main-content">
-        <h1 class="page-title">Pokedex</h1>
+    <header>
+        <nav>
+            <h1 class="page-title">Pokedex</h1>
 
-        <div class="search-container">
-            <form class="search-form" action="" onsubmit="searchPokemon(event)">
-                <input type="text" class="pokemon-search" name="pokemonsearch" id="pokemonSearch"/>
-                <button type="submit" class="search-button"><i class="fa fa-search"></i></button>
-            </form>
+            <div class="search-container">
+                <form class="search-form" action="" onsubmit="searchPokemon(event)">
+                    <div>
+                        <input type="text" class="pokemon-search" name="pokemonsearch" id="pokemonSearch" onchange="setTimeSearch()"/>
+                        <button type="submit" class="search-button"><i class="uil uil-search"></i></button>
+                    </div>
+                    <button id="filter_button" type="button" class="search-filter" onclick=""><i class="uil uil-filter"></i></button>
+                </form>
+            </div>
+        </nav>
+        <div id="filter_types" class="hide filter-buttons">
+            <button class="type-button" id="normal">normal</button>
+            <button class="type-button" id="fighting">fighting</button>
+            <button class="type-button" id="flying">flying</button>
+            <button class="type-button" id="poison">poison</button>
+            <button class="type-button" id="ground">ground</button>
+            <button class="type-button" id="rock">rock</button>
+            <button class="type-button" id="bug">bug</button>
+            <button class="type-button" id="ghost">ghost</button>
+            <button class="type-button" id="steel">steel</button>
+            <button class="type-button" id="fire">fire</button>
+            <button class="type-button" id="water">water</button>
+            <button class="type-button" id="grass">grass</button>
+            <button class="type-button" id="electric">electric</button>
+            <button class="type-button" id="psychic">psychic</button>
+            <button class="type-button" id="ice">ice</button>
+            <button class="type-button" id="dragon">dragon</button>
+            <button class="type-button" id="dark">dark</button>
+            <button class="type-button" id="fairy">fairy</button>
         </div>
+    </header>
+    <main class="content" id="main-content">
 
         <div id="pokedexContainer">
             <ol class="pokemons" id="pokemonList">
@@ -55,6 +82,8 @@
     <script src="./assets/js/pokemon-model.js"></script>
     <script src="./assets/js/poke-api.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/filter-types.js"></script>
+    <script src="./assets/js/disable-scroll.js"></script>
     <script src="./assets/js/pokemon-description.js"></script>
     <script src="./assets/js/search-pokemon.js"></script>
 </body>

@@ -1,6 +1,7 @@
 const listPokemon = document.getElementById("pokedexContainer")
 let pokemonSelectedActive = false
 let selectedPokemonBg, selectedPokemon
+let search = false
 
 function convertPokemonDescriptionToHtml(pokemon){
     return `    
@@ -50,26 +51,32 @@ function convertPokemonDescriptionToHtml(pokemon){
 }
 
 listPokemon.addEventListener('click', function(e) {
-    if(!pokemonSelectedActive){
+    if(!pokemonSelectedActive && !search){
         const pokemonSelected = e.target.id
+        
+        if(pokemonSelected && pokemonSelected !== 'pokemonList'){
+            //debugger
+            pokeApi.getPokemonDescription(pokemonSelected).then((pokemon) => {
+                const newHtml = convertPokemonDescriptionToHtml(pokemon)
+                pokemonList.innerHTML += newHtml
 
-        //debugger
-        pokeApi.getPokemonDescription(pokemonSelected).then((pokemon) => {
-            const newHtml = convertPokemonDescriptionToHtml(pokemon)
-            pokemonList.innerHTML += newHtml
+                selectedPokemonBg = document.getElementById("descriptionBg")
+                selectedPokemon = document.getElementById("pokemonDescription")
 
-            selectedPokemonBg = document.getElementById("descriptionBg")
-            selectedPokemon = document.getElementById("pokemonDescription")
+                pokemonSelectedActive = true
+            })
+            .catch((error) => console.error(error))
 
-            pokemonSelectedActive = true
-        })
-        .catch((error) => console.error(error))
+            disableScroll();
+        }
 
     }else{
         if(e.target.id === "descriptionBg"){
             selectedPokemon.parentElement.removeChild(selectedPokemon)
             selectedPokemonBg.parentElement.removeChild(selectedPokemonBg)
             pokemonSelectedActive = false
+
+            enableScroll();
         }
     }
 })

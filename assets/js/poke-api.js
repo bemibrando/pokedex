@@ -11,13 +11,14 @@ function convertPokeApiDetailToPokemon(pokeDetail){
     pokemon.types = types
     pokemon.type = type
 
-    pokemon.sprite = pokeDetail.sprites.other.dream_world.front_default
+    pokemon.sprite = pokeDetail.sprites.other.home.front_default
 
     return pokemon
 }
 
 function convertPokeApiToPokemonDescription(pokemon, pokemonSpecies){
     const pokemonDescription = new PokemonDescription()
+    
 
     pokemonDescription.number = pokemon.id
     pokemonDescription.name = pokemon.name
@@ -45,8 +46,8 @@ function convertPokeApiToPokemonDescription(pokemon, pokemonSpecies){
     pokemonDescription.egg_group = eggGroup
     pokemonDescription.egg_type = eggType
 
-    pokemonDescription.habitat = pokemonSpecies.habitat.name
-
+    pokemonDescription.habitat = (pokemonSpecies.habitat == null) ? "null" :  pokemonSpecies.habitat.name
+    
     return pokemonDescription
 }
 
@@ -83,4 +84,23 @@ pokeApi.getPokemonDescription = (pokemonName) => {
         .then((response) => response.json()) // Converting response to Json
         .then((pokemon) => pokeApi.getPokemonSpecies(pokemon)) 
         .catch((error) => console.error(error))
+}
+
+pokeApi.getPokemonTypeDetail = (pokemonType) => {
+    return fetch(pokemonType.pokemon.url)
+        .then((response) => response.json())
+        .then(convertPokeApiDetailToPokemon)
+        .catch((error) => console.error(error))
+}
+
+pokeApi.getPokemonByType = (pokemonType) => {
+    const url = `https://pokeapi.co/api/v2/type/${pokemonType}`
+
+    return fetch(url)
+        .then((response) => response.json())
+        .then((jsonBody) => jsonBody.pokemon) // Get Pokemon List
+        .then((pokemons) => pokemons.map(pokeApi.getPokemonTypeDetail)) // Get Pokemon Details List and converting to Json
+        .then((detailRequests) => Promise.all(detailRequests)) // wait to finish all requests
+        .then((pokemonDetails) => pokemonDetails)
+        .catch((error) => console.error(error)) 
 }

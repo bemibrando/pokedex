@@ -65,6 +65,8 @@
     padding-top: 1px;
     grid-area: number;
     vertical-align: middle;
+
+    font-size: 1.15rem;
 }
 
 .description-sprite{
@@ -89,25 +91,26 @@
 }
 
 .detail-row{
-    width: 60vw;
+    width: 100%;
     margin: .75rem;
-    text-align: center;
 
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
     font-size: 1.2rem;
 }
 
 .detail-topic{
     color: gray;
-    text-align: left;
-    width: 5.5rem;
+    text-align: right;
+    width: 45%;
+
+    padding-right: .5rem;
 }
 
 .detail-result{
     min-width: 25%;
+    max-width: 50%;
 }
 
 .habitat{
@@ -124,8 +127,6 @@
 }
 
 .egg-type{
-    padding-left: .5rem;
-    vertical-align: center;
     text-transform: capitalize;
     word-break: keep-all;
 }
@@ -164,7 +165,6 @@
     .detail-row{
         font-size: 1rem;
         justify-content: flex-start;
-        padding-left: 1rem;
     }
     .ability{
         width: 9rem;
@@ -175,11 +175,16 @@
     .pokemon-description{
         width: 90vw;
     }
+    .description-details{
+        padding: 1rem;
+    }
     .detail-row{
         font-size: .9rem;
+        margin: .65rem
     }
     .ability{
         width: 6rem;
+        padding: .5rem .75rem;
     }
     .description-header{
         width: 100%;

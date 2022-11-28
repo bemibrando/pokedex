@@ -1,7 +1,4 @@
-// listPokemon = ElementById("pokedexContainer")
-// loadMoreButton = ElementById('loadMoreButton')
-
-function convertSearchedPokemonToHtml(pokemon){
+function convertSearchedPokemonToHtml(pokemon, page404 = false){
     return`
     <div class="src-description-bg ${pokemon.type} light-bg"></div>
     <div class="src-pokemon-description ${pokemon.type}">
@@ -25,7 +22,7 @@ function convertSearchedPokemonToHtml(pokemon){
                 </div>
                 <div class="detail-row">
                     <span class="detail-topic">Habitat : </span>
-                    <span class="detail-result habitat">${pokemon.habitat}</span>
+                    ${(page404)?`<span class="detail-result habitat">Page 404</span>`:`<span class="detail-result habitat">${pokemon.habitat}</span>`}                    
                 </div>
                 <div class="detail-row">
                     <span class="detail-topic">Height : </span>
@@ -38,9 +35,19 @@ function convertSearchedPokemonToHtml(pokemon){
                 <div class="detail-row">
                     <span class="detail-topic">Abilities : </span>
                     <ol class="abilities-list">
-                        ${pokemon.abilities.map((ability) => `<li class="ability ${ability}">${ability}</li>`).join('')}
+                        ${(page404)?`
+                            <li class="ability">Intruder</li>
+                            <li class="ability">Nosy</li>
+                            <li class="ability">Snoop</li>
+                            <li class="ability">Infiltrator</li>
+                            ` : 
+                            pokemon.abilities.map((ability) => `<li class="ability">${ability}</li>`).join('')}        
                     </ol>
-                </div>
+                </div>                
+                ${(page404)?`<div class="detail-row">
+                        <span class="detail-topic">Personality : </span> 
+                        <span class="detail-result">Show up when other Pokémon is not found</span>
+                    </li>`:``}
             </div>
         </div>
     </div>
@@ -52,8 +59,33 @@ function changeToReturnButton(){
     loadMoreButton.innerHTML = `<label>Return</label>`
 }
 
+// Button Return >> Button Load More
+loadMoreButton.addEventListener('click', () => {
+    if(loadMoreButton.id === 'returnButton'){
+        // Erase search text
+        document.getElementById("pokemonSearch").value=""
+        // Enable pokemon card description
+        search = false
+
+        // Change Button functionality, now it can load more pokemons
+        loadMoreButton.id = 'loadMoreButton'
+        loadMoreButton.innerHTML = `<label>Load More</label>`
+
+        // List Pokemons
+        listPokemon.innerHTML = `<ol class="pokemons" id="pokemonList"></ol>`
+        reloadPokemonItens()
+    }
+})
+
+// variable to set timeout to search automatically
+let timeoutSearch
+
+function setTimeSearch(){
+    clearTimeout(timeoutSearch)
+    timeoutSearch = setTimeout(searchPokemon, 200)
+}
+
 const searchPokemon = e => {
-    e.preventDefault(); // method cancles the event if it is cancelable, meaning that the default action that belongs to the event will not occur
     const searchedPokemon = document.getElementById("pokemonSearch").value
 
     changeToReturnButton()
@@ -63,17 +95,14 @@ const searchPokemon = e => {
         listPokemon.innerHTML = newHtml
     })
     .catch((error) => {
-        listPokemon.innerHTML = `<h2 class="non-pokemon">404 pokemon not found!</h2>`
+        listPokemon.innerHTML = `<h2 class="non-pokemon">404, I Choose You!</h2>`
+        pokeApi.getPokemonDescription(`404`).then((pokemon) => {
+            const pokemon404 = convertSearchedPokemonToHtml(pokemon, true)
+            listPokemon.innerHTML += pokemon404
+        })
+        .catch((error2) => {
+            listPokemon.innerHTML += `<h3>error2</h3>`
+        })
     })
+    search = true
 }
-
-loadMoreButton.addEventListener('click', () => {
-    if(loadMoreButton.id === 'returnButton'){
-
-        loadMoreButton.id = 'loadMoreButton'
-        loadMoreButton.innerHTML = `<label>Load More</label>`
-
-        listPokemon.innerHTML = `<ol class="pokemons" id="pokemonList"></ol>`
-        reloadPokemonItens()
-    }
-})

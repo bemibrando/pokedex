@@ -8,6 +8,15 @@
 }
 
 .search-form{
+    display: inline-flex;
+    width: 100%
+}
+
+.search-form div{
+    width: 100%
+}
+
+.search-bar{
     position: relative;
     width: 100%;
     
@@ -27,14 +36,22 @@
 
 .search-button{
     position: absolute;
-    right: 1rem;
-    bottom: 0;
-    height: 95%;
+    right: 2.75rem;
+    top: .7rem;
     background: transparent;
     border: transparent;
     color: #98d5d7;
     cursor: pointer;
     outline: 0;
+}
+
+.search-filter{
+    background: aliceblue;
+    border: transparent;
+    font-size: 1.25rem;
+    padding: 0 .5rem;
+    color: #98d5d7;
+    cursor: pointer;
 }
 
 
@@ -43,16 +60,26 @@
         position: static;
         margin-bottom: 1rem;
     }
+    .search-button{
+        top: 6.65rem;
+        right: 3.5rem;
+    }
 }
 
 @media screen and (min-width: 500px) {
     .search-form{
         width: 60%;
     }
+    .search-button{
+        right: 2rem;
+    }
 }
 
 @media screen and (min-width: 767px) {
     .search-form{
         width: 70%;
+    }
+    .search-button{
+        right: 2.75rem;
     }
 }
