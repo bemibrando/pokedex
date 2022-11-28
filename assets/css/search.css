@@ -62,7 +62,7 @@
     }
     .search-button{
         top: 6.65rem;
-        right: 3.5rem;
+        right: 4.5rem;
     }
 }
 
@@ -71,15 +71,12 @@
         width: 60%;
     }
     .search-button{
-        right: 2rem;
+        right: 3rem;
     }
 }
 
 @media screen and (min-width: 767px) {
     .search-form{
         width: 70%;
-    }
-    .search-button{
-        right: 2.75rem;
     }
 }

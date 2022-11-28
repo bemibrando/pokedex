@@ -10,7 +10,7 @@ body{
 }
 
 header{
-    padding: .5rem 1rem;
+    padding: 1rem 1.5rem;
 
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@ header{
 
 header nav{
     width: 100%;
-    max-width: 992px;
+    max-width: 60rem;
 }
 
 
@@ -98,6 +98,9 @@ header nav{
 }
 
 @media screen and (min-width: 992px){
+    header{
+        padding: 1rem 2rem;
+    }
     .content{
         max-width: 992px;
         height:auto;

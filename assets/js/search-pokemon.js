@@ -88,7 +88,10 @@ function setTimeSearch(){
 const searchPokemon = e => {
     const searchedPokemon = document.getElementById("pokemonSearch").value
 
+    // Change button Load More >> Return
     changeToReturnButton()
+    // Close filter
+    closeFilter()
 
     pokeApi.getPokemonDescription(`${searchedPokemon.toLowerCase()}`).then((pokemon) => {
         const newHtml = convertSearchedPokemonToHtml(pokemon)
