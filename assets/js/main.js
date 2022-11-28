@@ -1,6 +1,6 @@
 let pokemonList = document.getElementById("pokemonList")
 const loadMoreButton = document.getElementById('loadMoreButton')
-const _limit = 10;
+let _limit = 10;
 let _offset = 0;
 const maxRecords = 1000
 
@@ -32,15 +32,36 @@ function loadPokemonItens(offset, limit) {
     })
 }
 
+function getWidthLimit(){
+    let width = window.innerWidth
+    let screenCards = 4
+    if(width < 380){
+        screenCards = 4
+    }
+    else if(width < 566){
+        screenCards = 10
+    }
+    else if(width < 991){
+        screenCards = 15
+    }
+    else{
+        screenCards = 20
+    }
+
+    _limit = Math.ceil(screenCards * 2.5)
+    console.log(_limit)
+}
+
+window.addEventListener('resize', getWidthLimit)
+
 function reloadPokemonItens(){
     pokemonList = document.getElementById("pokemonList")
 
-    loadPokemonItens(0, 10)
+
+    loadPokemonItens(0, _limit)
     _offset = 0
     
 }
-
-loadPokemonItens(_offset, _limit)
 
 loadMoreButton.addEventListener('click', () => {
     if(loadMoreButton.id === 'loadMoreButton'){
@@ -59,3 +80,6 @@ loadMoreButton.addEventListener('click', () => {
         }
     }
 })
+
+getWidthLimit()
+loadPokemonItens(_offset, _limit)
