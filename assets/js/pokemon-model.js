@@ -12,6 +12,7 @@ class PokemonDescription{
     type;
     types = []
     sprite;
+    animation;
 
     egg_group;
     egg_type;

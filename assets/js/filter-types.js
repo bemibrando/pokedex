@@ -9,10 +9,9 @@ function closeFilter(){
         document.getElementById(activeType).classList.remove(activeType)
         activeType = ""
     }
-
+    
     typesDiv.classList.add("hide")
     openFilter = false
-
 }
 
 filterButton.addEventListener('click', function(e) {

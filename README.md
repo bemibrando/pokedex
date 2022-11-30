@@ -45,15 +45,20 @@ Done:
 
 Extra:
 - When you click on a pokemon, display the details of the chosen pokemon at middle of screen
-- When a pokémon is selected to show its description, disable page scroll
 - Search for a specific pokemon
-- Search by type
+- Filter by type
 - Reload search list when choosing a type 
 - Navigate between search and pokédex and between search type and pokédex
-- Page 404
+- Page 404 personalized
+- Changes the amount of pokemon cards it loads depending on the screen size.
+- Search in real time, but it only shows if the pokemon exists if you type its name in full
+- Gifs in the corner of the Pokémon's description card
 
 Bugs fixed:
-- some pokemons do not have habitat and this caused the pokemon not to be loaded
+- When a pokémon is selected to show its description, disable page scroll
+- Some pokemons do not have habitat and this caused the pokemon not to be loaded
+- The "dream_world" sprite does not exist for all pokemons, so now the "official-artwork" sprite is being used
+- Don't load pokemons that don't have a sprite
 
 ### <b id="screenshot">Screenshot</b>
 
@@ -157,6 +162,16 @@ easily accessible through a modern RESTful API.
         <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white">
     </a>
     <a href="https://www.linkedin.com/in/mateusrr/" target="_blank">
+        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
+    </a>
+</div>
+
+» Rodrigo Withers - Suggested me to filter by type of pokemon
+<div>
+    <a href="https://github.com/rodrigowithers" target="_blank">
+        <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white">
+    </a>
+    <a href="https://www.linkedin.com/in/rodrigo-sales-56201412b/" target="_blank">
         <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
     </a>
 </div>

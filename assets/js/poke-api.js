@@ -11,7 +11,11 @@ function convertPokeApiDetailToPokemon(pokeDetail){
     pokemon.types = types
     pokemon.type = type
 
-    pokemon.sprite = pokeDetail.sprites.other.home.front_default
+    pokemon.sprite = pokeDetail.sprites.other.dream_world.front_default
+
+    if(!pokemon.sprite){
+        pokemon.sprite = pokeDetail.sprites.other["official-artwork"].front_default
+    }
 
     return pokemon
 }
@@ -30,6 +34,12 @@ function convertPokeApiToPokemonDescription(pokemon, pokemonSpecies){
     pokemonDescription.type = type
 
     pokemonDescription.sprite = pokemon.sprites.other.dream_world.front_default
+    
+    if(!pokemonDescription.sprite){
+        pokemonDescription.sprite = pokemon.sprites.other['official-artwork'].front_default
+    }
+
+    pokemonDescription.animation = pokemon.sprites.versions["generation-v"]["black-white"].animated.front_default
 
     pokemonDescription.height = pokemon.height
     pokemonDescription.weight = pokemon.weight

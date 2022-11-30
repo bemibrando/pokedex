@@ -5,7 +5,7 @@ let _offset = 0;
 const maxRecords = 1000
 
 function convertPokemonToHtml(pokemon) {
-    return `    
+    return (pokemon.sprite) ? `    
     <li class="pokemon ${pokemon.type}" id="${pokemon.number}">
         <div class="${pokemon.name}">
             <div class="pokemon-header">
@@ -22,7 +22,7 @@ function convertPokemonToHtml(pokemon) {
             <div class="pokemon-mask" id=${pokemon.name}></div>
         </div>
     </li>
-    `
+    ` : ``
 }
 
 function loadPokemonItens(offset, limit) {
@@ -48,8 +48,7 @@ function getWidthLimit(){
         screenCards = 20
     }
 
-    _limit = Math.ceil(screenCards * 2.5)
-    console.log(_limit)
+    _limit = Math.ceil(screenCards * 1.75)
 }
 
 window.addEventListener('resize', getWidthLimit)

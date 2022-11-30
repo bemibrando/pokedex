@@ -4,7 +4,7 @@ let selectedPokemonBg, selectedPokemon
 let search = false
 
 function convertPokemonDescriptionToHtml(pokemon){
-    return `    
+    return (pokemon.sprite) ? `    
     <div class="pokemon-description-bg ${pokemon.type} light-bg" id="descriptionBg">
     </div>
     <div class="pokemon-description ${pokemon.type}" id="pokemonDescription">
@@ -16,7 +16,10 @@ function convertPokemonDescriptionToHtml(pokemon){
             <span class="description-number"># ${pokemon.number}</span>
         </div>
 
-        <img class="description-sprite" src="${pokemon.sprite}" alt="${pokemon.name}">
+        <figure class="description-figure">
+            <img class="description-sprite" src="${pokemon.sprite}" alt="${pokemon.name} sprite">
+            ${(pokemon.animation) ? `<img class="description-animation" src="${pokemon.animation}" alt="${pokemon.name} animation">` : ``} 
+        </figure>
         
         <div class="description-details-bg">
             <div class="description-details">
@@ -47,7 +50,7 @@ function convertPokemonDescriptionToHtml(pokemon){
             </div>
         </div>
     </div>
-    `
+    ` : ``
 }
 
 listPokemon.addEventListener('click', function(e) {

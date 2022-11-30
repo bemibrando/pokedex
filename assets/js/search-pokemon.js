@@ -1,5 +1,5 @@
 function convertSearchedPokemonToHtml(pokemon, page404 = false){
-    return`
+    return (pokemon.sprite || page404) ? `
     <div class="src-description-bg ${pokemon.type} light-bg"></div>
     <div class="src-pokemon-description ${pokemon.type}">
         <div class="description-header">
@@ -10,8 +10,11 @@ function convertSearchedPokemonToHtml(pokemon, page404 = false){
             <span class="description-number"># ${pokemon.number}</span>
         </div>
 
-        <img class="description-sprite" src="${pokemon.sprite}" alt="${pokemon.name}">
-        
+        <figure class="description-figure">
+            <img class="description-sprite" src="${pokemon.sprite}" alt="${pokemon.name} sprite">
+            ${(pokemon.animation) ? `<img class="description-animation" src="${pokemon.animation}" alt="${pokemon.name} animation">` : ``} 
+        </figure>
+
         <div class="src-description-details-bg">
             <div class="description-details">
                 <div class="detail-row">
@@ -51,7 +54,7 @@ function convertSearchedPokemonToHtml(pokemon, page404 = false){
             </div>
         </div>
     </div>
-    `
+    ` : ``
 }
 
 function changeToReturnButton(){
@@ -74,6 +77,8 @@ loadMoreButton.addEventListener('click', () => {
         // List Pokemons
         listPokemon.innerHTML = `<ol class="pokemons" id="pokemonList"></ol>`
         reloadPokemonItens()
+        
+        closeFilter()
     }
 })
 
@@ -90,8 +95,6 @@ const searchPokemon = e => {
 
     // Change button Load More >> Return
     changeToReturnButton()
-    // Close filter
-    closeFilter()
 
     pokeApi.getPokemonDescription(`${searchedPokemon.toLowerCase()}`).then((pokemon) => {
         const newHtml = convertSearchedPokemonToHtml(pokemon)

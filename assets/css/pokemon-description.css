@@ -68,12 +68,22 @@
 
     font-size: 1.15rem;
 }
-
+.description-figure{
+    z-index: 1010;
+    display: inline-block;
+}
 .description-sprite{
     height: 20vh;
     margin-bottom: -1rem;
-    z-index: 1010;
 }
+
+.description-animation{
+    position: relative;
+    right: -10rem;
+    margin-bottom: -1rem;
+    scale: 1.25;
+}
+
 .description-details-bg{
     box-shadow: rgb(204, 219, 232) 0px 5px 6px 3px inset;
     background-color: aliceblue;
@@ -159,6 +169,9 @@
     .description-name{
         width: 40vw;
     }
+    .description-animation{
+        right: -5rem;
+    }
 }
 
 @media screen and (max-width: 566px) {
@@ -168,6 +181,9 @@
     }
     .ability{
         width: 9rem;
+    }
+    .description-animation{
+        right: -3rem;
     }
 }
 
@@ -189,5 +205,8 @@
     .description-header{
         width: 100%;
         justify-content: space-between;
+    }
+    .description-animation{
+        right: -1rem;
     }
 }
