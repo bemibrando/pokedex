@@ -1,8 +1,10 @@
-# Pokedex &nbsp; &nbsp; &nbsp; <img src="https://img.shields.io/github/last-commit/bemibrando/pokedex?style=for-the-badge" height="24px"/> &nbsp; <img src="https://img.shields.io/badge/status-In Progress-yellow?style=for-the-badge" height="24px"/>
+# Pokedex &nbsp; &nbsp; &nbsp; <img src="https://img.shields.io/github/last-commit/bemibrando/pokedex?style=for-the-badge" height="24px"/> &nbsp; <img src="https://img.shields.io/badge/status-done-green?style=for-the-badge" height="24px"/>
 
 This is a solution to Building a Pokédex with JavaScript from [Digital Innovation One](https://www.dio.me/en). Dio.me is the platform for you to learn from experts, master the main technologies and enter the most desired companies faster.
 
-This Pokedex load all pokemons and when you click on a pokemon, some details about the chosen pokemon will appear. It's possible to search for a specific pokemon and also look up just for types
+This Pokedex load all pokemons and when you click on a pokemon, some details about the chosen pokemon will appear. It's possible to search for a specific pokemon and also look up just for types and search for a specific pokemon by type
+
+Total Spent Time: 17h3m
 
 <br/><br/>
 
@@ -34,16 +36,18 @@ This Pokedex load all pokemons and when you click on a pokemon, some details abo
 
 Extra:
 - Search for a specific pokemon
+- Search by type and a specific Pokemon by type
+- Swipe down close description card
 
 ### <b id="project-composition">Project Composition</b>
-Done:
+Done:  :white_check_mark:
 - Consume Pokemon RESTful API
 - Build webpage dinamically
 - Create pagination
 - Limit to show only first generation Pokemons
 - Create Pokemon Description page
 
-Extra:
+Extra: :sunglasses:
 - When you click on a pokemon, display the details of the chosen pokemon at middle of screen
 - Search for a specific pokemon
 - Filter by type
@@ -53,8 +57,13 @@ Extra:
 - Changes the amount of pokemon cards it loads depending on the screen size.
 - Search in real time, but it only shows if the pokemon exists if you type its name in full
 - Gifs in the corner of the Pokémon's description card
+- Description card animation going up when popping up and down when closing
+- When swipe down at mobile the description card close
+- When closing the description card with swipe on mobile, it does not scroll on the main page
+- it is possible to deselect the type of pokemon from the filter
+- After selecting a type, it is possible to do a search within the list of pokemons of that type
 
-Bugs fixed:
+Bugs fixed: :bug:
 - When a pokémon is selected to show its description, disable page scroll
 - Some pokemons do not have habitat and this caused the pokemon not to be loaded
 - The "dream_world" sprite does not exist for all pokemons, so now the "official-artwork" sprite is being used
@@ -74,6 +83,8 @@ Bugs fixed:
     <img src="./assets/img/desktop.jpeg" alt="Pokedex solution desktop view" width="75%">
     <img src="./assets/img/desktop-description.jpeg" alt="Pokemon description solution desktop view" width="75%">
     <img src="./assets/img/desktop-search.jpeg" alt="Pokemon search solution desktop view" width="75%">
+    <img src="./assets/img/desktop-filter-type.jpeg" alt="Pokemon filter by type solution desktop view" width="75%">
+    <img src="./assets/img/desktop-search-type.jpeg" alt="Pokemon search with filter by type solution desktop view" width="75%">
 </p>
 </details>
 
@@ -84,6 +95,9 @@ Bugs fixed:
     <img src="./assets/img/phone.jpeg" alt="Pokedex solution cellphone view" width="257px">
     <img src="./assets/img/phone-description.jpeg" alt="Pokemon description solution cellphone view" width="257px">
     <img src="./assets/img/phone-search.jpeg" alt="Pokemon search solution cellphone view" width="257px">
+    <img src="./assets/img/mobile-filter-type-selected.jpeg" alt="Pokemon search solution cellphone view" width="257px">
+    <img src="./assets/img/mobile-filter-type-hided.jpeg" alt="Pokemon search solution cellphone view" width="257px">
+    <img src="./assets/img/mobile-search-type.jpeg" alt="Pokemon search solution cellphone view" width="257px">
 </p>
 </details>
 
@@ -110,6 +124,7 @@ Bugs fixed:
 - How to convert PokeApi model to my model
 - How to add subitems to HTML dinamically
 - How to add pagination and remove the button when it reaches the limit
+- How get Real Time Input
 
 ## <b id="useful-resources">Useful Resources</b>
 - [Saepul Nahwan - Pokedex App](https://dribbble.com/shots/6540871-Pokedex-App) - This design was used as inspiration to develop this webpage.
@@ -171,7 +186,7 @@ easily accessible through a modern RESTful API.
     <a href="https://github.com/rodrigowithers" target="_blank">
         <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white">
     </a>
-    <a href="https://www.linkedin.com/in/rodrigo-sales-56201412b/" target="_blank">
+    <a href="https://www.linkedin.com/in/rodrigo-withers/" target="_blank">
         <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
     </a>
 </div>
