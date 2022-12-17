@@ -1,4 +1,5 @@
 const pokeApi = {}
+let typeArr = []
 
 function convertPokeApiDetailToPokemon(pokeDetail){
     const pokemon = new Pokemon()
@@ -99,8 +100,17 @@ pokeApi.getPokemonDescription = (pokemonName) => {
 pokeApi.getPokemonTypeDetail = (pokemonType) => {
     return fetch(pokemonType.pokemon.url)
         .then((response) => response.json())
-        .then(convertPokeApiDetailToPokemon)
+        .then(getPokemon)
         .catch((error) => console.error(error))
+}
+function cleanTypeArr(){
+    typeArr = [];
+}
+
+function getPokemon(pokemon) {
+    typeArr.push(pokemon)
+    pokemonhtml = convertPokeApiDetailToPokemon(pokemon)
+    return pokemonhtml
 }
 
 pokeApi.getPokemonByType = (pokemonType) => {

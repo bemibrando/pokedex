@@ -21,4 +21,5 @@ class PokemonDescription{
     weight;
     abilities = [];
     ability;
+    evolutionChain = []
 }

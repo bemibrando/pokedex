@@ -57,58 +57,41 @@ function convertSearchedPokemonToHtml(pokemon, page404 = false){
     ` : ``
 }
 
-function changeToReturnButton(){
-    loadMoreButton.id = 'returnButton'
-    loadMoreButton.innerHTML = `<label>Return</label>`
-}
-
-// Button Return >> Button Load More
-loadMoreButton.addEventListener('click', () => {
-    if(loadMoreButton.id === 'returnButton'){
-        // Erase search text
-        document.getElementById("pokemonSearch").value=""
-        // Enable pokemon card description
-        search = false
-
-        // Change Button functionality, now it can load more pokemons
-        loadMoreButton.id = 'loadMoreButton'
-        loadMoreButton.innerHTML = `<label>Load More</label>`
-
-        // List Pokemons
-        listPokemon.innerHTML = `<ol class="pokemons" id="pokemonList"></ol>`
-        reloadPokemonItens()
-        
-        closeFilter()
-    }
-})
-
 // variable to set timeout to search automatically
 let timeoutSearch
 
 function setTimeSearch(){
     clearTimeout(timeoutSearch)
-    timeoutSearch = setTimeout(searchPokemon, 200)
+    timeoutSearch = setTimeout(searchPokemon, 150)
 }
 
 const searchPokemon = e => {
-    const searchedPokemon = document.getElementById("pokemonSearch").value
+    e.preventDefault();
+    
+    const searchedPokemon = document.getElementById("pokemonSearch").value.toLowerCase()
 
-    // Change button Load More >> Return
-    changeToReturnButton()
+    // if filter is not active, search by API, else search inside typeArr list 
+    if(!filterActive){
+        // Change button "Load More" >> "Return"
+        changeToReturnButton()
 
-    pokeApi.getPokemonDescription(`${searchedPokemon.toLowerCase()}`).then((pokemon) => {
-        const newHtml = convertSearchedPokemonToHtml(pokemon)
-        listPokemon.innerHTML = newHtml
-    })
-    .catch((error) => {
-        listPokemon.innerHTML = `<h2 class="non-pokemon">404, I Choose You!</h2>`
-        pokeApi.getPokemonDescription(`404`).then((pokemon) => {
-            const pokemon404 = convertSearchedPokemonToHtml(pokemon, true)
-            listPokemon.innerHTML += pokemon404
+        pokeApi.getPokemonDescription(`${searchedPokemon}`).then((pokemon) => {
+            const newHtml = convertSearchedPokemonToHtml(pokemon)
+            listPokemon.innerHTML = newHtml
         })
-        .catch((error2) => {
-            listPokemon.innerHTML += `<h3>error2</h3>`
+        .catch((error) => {
+            listPokemon.innerHTML = `<h2 class="non-pokemon">404, I Choose You!</h2>`
+            pokeApi.getPokemonDescription(`404`).then((pokemon) => {
+                const pokemon404 = convertSearchedPokemonToHtml(pokemon, true)
+                listPokemon.innerHTML += pokemon404
+            })
+            .catch((error2) => {
+                listPokemon.innerHTML += `<h3>error2</h3>`
+            })
         })
-    })
-    search = true
+        search = true
+    }
+    else{
+        searchTypeArr(searchedPokemon)
+    }
 }

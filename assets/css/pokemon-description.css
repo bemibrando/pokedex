@@ -12,7 +12,7 @@
     z-index: 1000;
     position: fixed;
     left: 50%;
-    top: 50%;
+    top: 100%;
     transform: translate(-50%, -50%);
     width: 80vw;
     min-height: 80vh;
@@ -27,6 +27,10 @@
     align-items: center;
     padding: 1rem;
 }
+
+  .display-none{
+    display: none;
+  }
 
 .description-header{
     display: grid;

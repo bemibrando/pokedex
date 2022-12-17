@@ -7,7 +7,7 @@ function convertPokemonDescriptionToHtml(pokemon){
     return (pokemon.sprite) ? `    
     <div class="pokemon-description-bg ${pokemon.type} light-bg" id="descriptionBg">
     </div>
-    <div class="pokemon-description ${pokemon.type}" id="pokemonDescription">
+    <div class="display-none pokemon-description ${pokemon.type}" id="pokemonDescription">
         <div class="description-header">
             <span class="description-name">${pokemon.name}</span>
             <ol class="types description-types">
@@ -53,6 +53,55 @@ function convertPokemonDescriptionToHtml(pokemon){
     ` : ``
 }
 
+function openCardAnimation(){    
+    var id = setInterval(remove, 5);
+    var pos = 100
+    function remove(){
+        if(pos == 100){
+            selectedPokemon.classList.remove('display-none')
+        }
+        else if(pos <= 50){
+            selectedPokemon.style.top = '50' + '%';
+            clearInterval(id);
+        }
+        else{
+            selectedPokemon.style.top = pos + '%';
+        }
+        pos -= 4;
+    }
+    return
+}
+
+function removeCardAnimation(){    
+    var id = setInterval(remove, 5);
+    var pos = 50
+    function remove(){
+        if(pos == 102){
+            selectedPokemon.parentElement.removeChild(selectedPokemon)
+        }
+        else if(pos >= 110){
+            selectedPokemonBg.parentElement.removeChild(selectedPokemonBg)
+            clearInterval(id);
+            enableScroll();
+        }
+        else{
+            selectedPokemon.style.top = pos + '%';
+        }
+        pos += 4;
+    }
+    return
+}
+
+function checkClickBg(clickId){
+    if(clickId === "descriptionBg"){
+        removeCardAnimation()
+        pokemonSelectedActive = false
+
+        enableScroll();
+        initialY = null
+    }
+}
+
 listPokemon.addEventListener('click', function(e) {
     if(!pokemonSelectedActive && !search){
         const pokemonSelected = e.target.id
@@ -61,10 +110,12 @@ listPokemon.addEventListener('click', function(e) {
             //debugger
             pokeApi.getPokemonDescription(pokemonSelected).then((pokemon) => {
                 const newHtml = convertPokemonDescriptionToHtml(pokemon)
-                pokemonList.innerHTML += newHtml
+                listPokemon.innerHTML += newHtml
 
                 selectedPokemonBg = document.getElementById("descriptionBg")
                 selectedPokemon = document.getElementById("pokemonDescription")
+
+                openCardAnimation()
 
                 pokemonSelectedActive = true
             })
@@ -74,12 +125,45 @@ listPokemon.addEventListener('click', function(e) {
         }
 
     }else{
-        if(e.target.id === "descriptionBg"){
-            selectedPokemon.parentElement.removeChild(selectedPokemon)
-            selectedPokemonBg.parentElement.removeChild(selectedPokemonBg)
-            pokemonSelectedActive = false
-
-            enableScroll();
-        }
+        checkClickBg(e.target.id)
     }
 })
+
+
+//#region  GET USER SWIPE
+listPokemon.addEventListener("touchstart", startTouch, false)
+listPokemon.addEventListener("touchmove", moveTouch, false)
+
+var initialY = null;
+
+function startTouch(e) {
+    if(pokemonSelectedActive){
+        initialY = e.touches[0].clientY;
+        e.preventDefault();
+        checkClickBg(e.target.id)
+        console.log(e.target.id)
+    }
+}
+
+function moveTouch(e) {
+    if(pokemonSelectedActive){
+
+        if(initialY == null){
+            return
+        }
+        
+        var currentY = e.touches[0].clientY;
+        var differenceY = initialY - currentY;
+
+        if(differenceY < 0 ){
+            removeCardAnimation()
+            
+            pokemonSelectedActive = false
+        }
+
+        initialY = null;
+        e.preventDefault();
+    }
+}
+
+//#endregion

@@ -56,7 +56,6 @@ window.addEventListener('resize', getWidthLimit)
 function reloadPokemonItens(){
     pokemonList = document.getElementById("pokemonList")
 
-
     loadPokemonItens(0, _limit)
     _offset = 0
     

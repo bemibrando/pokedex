@@ -24,74 +24,164 @@
 /*#region type background-color*/
 .normal {
     background-color: #a6a877;
+    border: 3px solid transparent;
+}
+.pokemons .normal:hover {
+    background-color: #C0C29F;
+    border: 3px solid #a6a877;
 }
 
 .fighting {
     background-color: #bf3029;
+    border: 3px solid transparent;
+}
+.pokemons .fighting:hover {
+    background-color: #D26E69;
+    border: 3px solid #bf3029;
 }
 
 .flying {
     background-color: #a98ff0;
+    border: 3px solid transparent;
+}
+.pokemons .flying:hover {
+    background-color: #C2B0F4;
+    border: 3px solid #a98ff0;
 }
 
 .poison {
     background-color: #a040a0;
+    border: 3px solid transparent;
+}
+.pokemons .poison:hover {
+    background-color: #BC79BC;
+    border: 3px solid #a040a0;
 }
 
 .ground {
     background-color: #dfbf69;
+    border: 3px solid transparent;
+}
+.pokemons .ground:hover {
+    background-color: #E8D296;
+    border: 3px solid #dfbf69;
 }
 
 .rock {
     background-color: #b8a137;
+    border: 3px solid transparent;
+}
+.pokemons .rock:hover {
+    background-color: #CDBD73;
+    border: 3px solid #b8a137;
 }
 
 .bug {
     background-color: #a8b720;
+    border: 3px solid transparent;
+}
+.pokemons .bug:hover {
+    background-color: #C2CC62;
+    border: 3px solid #a8b720;
 }
 
 .ghost {
     background-color: #6e5896;
+    border: 3px solid transparent;
+}
+.pokemons .ghost:hover {
+    background-color: #998AB5;
+    border: 3px solid #6e5896;
 }
 
 .steel {
     background-color: #b9b7cf;
+    border: 3px solid transparent;
+}
+.pokemons .steel:hover {
+    background-color: #CECCDD;
+    border: 3px solid #b9b7cf;
 }
 
 .fire {
     background-color: #ee7f30;
+    border: 3px solid transparent;
+}
+.pokemons .fire:hover {
+    background-color: #F3A56E;
+    border: 3px solid #ee7f30;
 }
 
 .water {
     background-color: #678fee;
+    border: 3px solid transparent;
+}
+.pokemons .water:hover {
+    background-color: #94B0F3;
+    border: 3px solid #678fee;
 }
 
 .grass {
     background-color: #77c850;
+    border: 3px solid transparent;
+}
+.pokemons .grass:hover {
+    background-color: #9FD884;
+    border: 3px solid #77c850;
 }
 
 .electric {
     background-color: #f7cf2e;
+    border: 3px solid transparent;
+}
+.pokemons .electric:hover {
+    background-color: #F9DD6C;
+    border: 3px solid #f7cf2e;
 }
 
 .psychic {
     background-color: #f65687;
+    border: 3px solid transparent;
+}
+.pokemons .psychic:hover {
+    background-color: #F888AB;
+    border: 3px solid #f65687;
 }
 
 .ice {
     background-color: #98d5d7;
+    border: 3px solid transparent;
+}
+.pokemons .ice:hover {
+    background-color: #B6E1E3;
+    border: 3px solid #98d5d7;
 }
 
 .dragon {
     background-color: #6f38f6;
+    border: 3px solid transparent;
+}
+.pokemons .dragon:hover {
+    background-color: #9A73F8;
+    border: 3px solid #6f38f6;
 }
 
 .dark {
     background-color: #725847;
+    border: 3px solid transparent;
+}
+.pokemons .dark:hover {
+    background-color: #9C8A7E;
+    border: 3px solid #725847;
 }
 
 .fairy {
-    background-color: #f9aec7;
+    background-color: #F9B6CC;
+    border: 3px solid transparent;
+}
+.pokemons .fairy:hover {
+    background-color: #FAC6D7;
+    border: 3px solid #F9B6CC;
 }
 /*#endregion*/
 
@@ -103,6 +193,11 @@
 
     display: flex;
     flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+.pokemon:hover{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .pokemon-header{
